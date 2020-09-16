@@ -33,7 +33,7 @@ spec:
       - env:
         - name: SOLR_DATA_HOME
           value: /solrdata
-        image: dtobtn/testbed_solr:latest
+        image: dtobtn/testbed-solr:latest
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
