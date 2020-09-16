@@ -26,8 +26,8 @@ jobs:
     - uses: Azure/k8s-deploy@v1
       with:
         manifests: |
-          kubernetes/testbed-solr-statefulset.yaml
-          kubernetes/testbed-solr-service.yaml
+          kubernetes/testbed-solr-statefulset.yml
+          kubernetes/testbed-solr-service.yml
         images: |
           dtobtn/testbed-solr:${{ github.sha }}
         namespace: |
