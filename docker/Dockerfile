@@ -54,7 +54,8 @@ RUN cp -R "${SOLR_ROOT_PATH}/contrib/extraction/lib" "${SOLR_ROOT_PATH}/server/s
     chown -R solr:solr "$SOLR_ROOT_PATH/server/solr-webapp/webapp/WEB-INF"; 
 
 
-COPY --chown=solr:solr docker-scripts/ /var/docker-scripts
+COPY --chown=solr:solr ./docker/docker-entrypoint /var/docker-scripts
+COPY --chown=solr:solr ./docker/solr-run /var/docker-scripts
 RUN sed -i -e 's/\r$//' /var/docker-scripts/docker-entrypoint; \
     sed -i -e 's/\r$//' /var/docker-scripts/solr-run; \
 	chmod 755 /var/docker-scripts/*;
